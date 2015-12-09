@@ -1,0 +1,26 @@
+======
+Wechat
+======
+
+Wechat is a module based django and wechat api.
+
+Detailed documentation is in the "docs" directory
+
+Quick start
+-----------
+
+1. Add "wechat" to your INSTALLED_APPS setting like this::
+   INSTALLED_APPS = (
+       ...
+       'wechat',
+   )
+
+2. Include the wechat URLconf in your project urls.py like this::
+   url(r'^wechat/', include('wechat.urls')),
+
+3. Run 'python manage.py migrate' to create the wechat models.
+
+4. Start the development server and visit http://127.0.0.1:8000/admin/
+   to create a wechat Response and Menu (you'll need the Admin ap enabled).
+
+5. Visit http://127.0.0.1:8000/wechat/ to participate in the wechat.

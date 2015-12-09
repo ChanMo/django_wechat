@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+django_wechat.egg-info/PKG-INFO
+django_wechat.egg-info/SOURCES.txt
+django_wechat.egg-info/dependency_links.txt
+django_wechat.egg-info/top_level.txt
+wechat/__init__.py
+wechat/admin.py
+wechat/api.py
+wechat/apps.py
+wechat/models.py
+wechat/tests.py
+wechat/urls.py
+wechat/views.py

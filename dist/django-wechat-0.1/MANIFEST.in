@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+recursive-include wechat/api.py
+recursive-include docs *
+recursive-include templates *
