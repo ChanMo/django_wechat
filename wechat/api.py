@@ -217,15 +217,15 @@ class Member(Base):
     def get_code_url(self, redirect_uri, state):
         redirect_uri = urllib.quote(redirect_uri, safe='')
         url = 'https://open.weixin.qq.com/connect/oauth2/authorize'
-        param = {
-            'appid': self.appid,
-            'redirect_uri': redirect_uri,
-            'response_type': 'code',
-            'scope': 'snsapi_userinfo',
-            'state': state,
-        }
+        # param = {
+        #     'appid': self.appid,
+        #     'redirect_uri': redirect_uri,
+        #     'response_type': 'code',
+        #     'scope': 'snsapi_userinfo',
+        #     'state': state,
+        # }
         url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_userinfo&state=%s' % (self.appid, redirect_uri, state)
-        return self.get_url(url, param)
+        return self.get_url(url)
 
     def get_access_token_url(self, code):
         url = 'https://api.weixin.qq.com/sns/oauth2/access_token'
@@ -298,6 +298,11 @@ class Pay(Base):
 class Js(Base):
     'jssdk'
 
+    def __init__(self):
+        super(Js, self).__init__()
+        self.jsapi = settings.WECHAT_JS_APILIST
+        self.debug = settings.WECHAT_JS_DEBUG
+
     def get_ticket(self):
         jsapi_ticket = cache.get('wx_jsapi_ticket')
         if jsapi_ticket:
@@ -317,12 +322,13 @@ class Js(Base):
         timestamp = unicode(int(time.time()))
         sign = self.get_js_sign(url, noncestr, timestamp)
         wx_config = {
-            'debug': False,
+            'debug': self.debug,
             'appId': self.appid,
             'timestamp': timestamp,
             'nonceStr': noncestr,
             'signature': sign,
-            'jsApiList': ['onMenuShareTimeline','onMenuShareAppMessage'],
+            #'jsApiList': ['onMenuShareTimeline','onMenuShareAppMessage'],
+            'jsApiList': self.jsapi,
         }
         return json.dumps(wx_config)
 

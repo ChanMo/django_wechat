@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: django-wechat
-Version: 0.2
+Version: 0.3
 Summary: A simple wechat api model.
 Home-page: http://www.shax.xyz/
 Author: Chen
@@ -32,6 +32,14 @@ Description: ======
            to create a wechat Response and Menu (you'll need the Admin ap enabled).
         
         5. Visit http://127.0.0.1:8000/wechat/ to participate in the wechat.
+        
+        
+        Changelog
+        ---------
+        
+        v0.3 -make jsapi editable, fixed get_code_url()
+        v0.2 -create base view
+        v0.1 -initial release
         
 Platform: UNKNOWN
 Classifier: Environment :: Web Environment

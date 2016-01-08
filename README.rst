@@ -24,3 +24,11 @@ Quick start
    to create a wechat Response and Menu (you'll need the Admin ap enabled).
 
 5. Visit http://127.0.0.1:8000/wechat/ to participate in the wechat.
+
+
+Changelog
+---------
+
+v0.3 -make jsapi editable, fixed get_code_url()
+v0.2 -create base view
+v0.1 -initial release
