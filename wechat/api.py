@@ -216,7 +216,7 @@ class Member(Base):
 
     def get_code_url(self, redirect_uri, state):
         redirect_uri = urllib.quote(redirect_uri, safe='')
-        url = 'https://open.weixin.qq.com/connect/oauth2/authorize'
+        # url = 'https://open.weixin.qq.com/connect/oauth2/authorize'
         # param = {
         #     'appid': self.appid,
         #     'redirect_uri': redirect_uri,
@@ -224,8 +224,9 @@ class Member(Base):
         #     'scope': 'snsapi_userinfo',
         #     'state': state,
         # }
-        url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_userinfo&state=%s' % (self.appid, redirect_uri, state)
-        return self.get_url(url)
+        url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_userinfo&state=%s#wechat_redirect' % (self.appid, redirect_uri, state)
+        #return self.get_url(url)
+        return url
 
     def get_access_token_url(self, code):
         url = 'https://api.weixin.qq.com/sns/oauth2/access_token'
