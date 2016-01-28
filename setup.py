@@ -1,7 +1,7 @@
 import os
 from setuptools import setup
 
-with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
+with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
     README = readme.read()
 
 # allow setup.py to be run from any path
@@ -15,7 +15,7 @@ setup(
     license = 'BSD License',
     description = 'A simple wechat api model.',
     long_description = README,
-    url = 'http://www.shax.xyz/',
+    url = 'http://www.findchen.com/',
     author = 'Chen',
     author_email = 'chen.orange@aliyun.com',
     classifiers = [

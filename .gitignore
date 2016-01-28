@@ -1,0 +1,9 @@
+# python files
+*.pyc
+
+# django migrations files
+**/migrations
+
+# scss cache files
+*.css.map
+**/.sass-cache
