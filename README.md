@@ -27,7 +27,9 @@ Detailed documentation is in the "docs" directory
     ```
 
 2. Include the wechat URLconf in your project urls.py like this:
-   `url(r'^wechat/', include('wechat.urls')),`
+    ```
+    url(r'^wechat/', include('wechat.urls')),
+    ```
 
 3. Run `python manage.py migrate` to create the wechat models.
 
@@ -37,5 +39,7 @@ Detailed documentation is in the "docs" directory
 ## Changelog
 
 > v0.3 -make jsapi editable, fixed get_code_url()
+
 > v0.2 -create base view
+
 > v0.1 -initial release
