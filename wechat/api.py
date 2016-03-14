@@ -348,3 +348,21 @@ class Js(Base):
         s = s[0:-1]
         s = hashlib.sha1(s).hexdigest()
         return s
+
+
+class Qrcode(Base):
+    'qrcode'
+    def get_ticket(self, id):
+        token = self.get_token()
+        url = 'https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=%s' % token
+        data = {
+            'action_name': 'QR_LIMIT_SCENE',
+            'action_info': {
+                'scene': {
+                    'scene_id': id,
+                }
+            }
+        }
+        data = json_dumps(data)
+        result = self.get_data(url, data)
+        return result['ticket']

@@ -2,44 +2,55 @@ Metadata-Version: 1.1
 Name: django-wechat
 Version: 0.3
 Summary: A simple wechat api model.
-Home-page: http://www.shax.xyz/
+Home-page: http://www.findchen.com/
 Author: Chen
 Author-email: chen.orange@aliyun.com
 License: BSD License
-Description: ======
-        Wechat
-        ======
+Description: # Wechat
         
         Wechat is a module based django and wechat api.
         
         Detailed documentation is in the "docs" directory
         
-        Quick start
-        -----------
+        ## Quick start
         
-        1. Add "wechat" to your INSTALLED_APPS setting like this::
-           INSTALLED_APPS = (
-               ...
-               'wechat',
-           )
+        1. Add "wechat" to your INSTALLED_APPS setting like this:
+            ```
+            INSTALLED_APPS = (
+                ...
+                'wechat',
+            )
+           ```
         
-        2. Include the wechat URLconf in your project urls.py like this::
-           url(r'^wechat/', include('wechat.urls')),
+        2. Add wechat config to your settings.py file:
+            ```
+            # wechat config
+            WECHAT_APPID = ''
+            WECHAT_APPSECRET = ''
+            WECHAT_TOKEN = ''
+            WECHAT_MCH_ID = ''
+            WECHAT_KEY = ''
+            WECHAT_JS_DEBUG = ''
+            WECHAT_JS_APILIST = []
+            ```
         
-        3. Run 'python manage.py migrate' to create the wechat models.
+        2. Include the wechat URLconf in your project urls.py like this:
+            ```
+            url(r'^wechat/', include('wechat.urls')),
+            ```
         
-        4. Start the development server and visit http://127.0.0.1:8000/admin/
-           to create a wechat Response and Menu (you'll need the Admin ap enabled).
+        3. Run `python manage.py migrate` to create the wechat models.
         
-        5. Visit http://127.0.0.1:8000/wechat/ to participate in the wechat.
+        4. Add url `http://yourdomain/wechat/` and `yourtoken` to your wechat dashboard.
         
         
-        Changelog
-        ---------
+        ## Changelog
         
-        v0.3 -make jsapi editable, fixed get_code_url()
-        v0.2 -create base view
-        v0.1 -initial release
+        > v0.3 -make jsapi editable, fixed get_code_url()
+        
+        > v0.2 -create base view
+        
+        > v0.1 -initial release
         
 Platform: UNKNOWN
 Classifier: Environment :: Web Environment
