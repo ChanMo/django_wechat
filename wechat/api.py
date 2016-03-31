@@ -363,6 +363,6 @@ class Qrcode(Base):
                 }
             }
         }
-        data = json_dumps(data)
+        data = json.dumps(data)
         result = self.get_data(url, data)
         return result['ticket']
