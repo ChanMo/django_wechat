@@ -1,45 +1,62 @@
-# Wechat
+基于django的微信基础模块
+========================
 
-Wechat is a module based django and wechat api.
+一个基于django的微信基础功能模块
 
-Detailed documentation is in the "docs" directory
+:Author:
+    Chen
 
-## Quick start
+快速开始:
+---------
 
-1. Add "wechat" to your INSTALLED_APPS setting like this:
-    ```
+安装依赖模块:
+
+.. code-block::
+
+    pip install xmltodict
+
+把wechat模块添加到你的settings.py里面:
+
+.. code-block::
+
     INSTALLED_APPS = (
         ...
         'wechat',
+        ...
     )
-   ```
 
-2. Add wechat config to your settings.py file:
-    ```
+在settings.py里面添加微信设置信息:
+
+.. code-block::
+
     # wechat config
-    WECHAT_APPID = ''
-    WECHAT_APPSECRET = ''
-    WECHAT_TOKEN = ''
-    WECHAT_MCH_ID = ''
-    WECHAT_KEY = ''
-    WECHAT_JS_DEBUG = ''
-    WECHAT_JS_APILIST = []
-    ```
+    WECHAT_APPID = 'test'
+    WECHAT_APPSECRET = 'test'
+    WECHAT_TOKEN = 'test'
+    WECHAT_MCH_ID = 'test'
+    WECHAT_KEY = 'test'
+    WECHAT_JS_DEBUG = 'test'
+    WECHAT_JS_APILIST = ['test']
+    
+在urls.py里面添加微信接口:
 
-2. Include the wechat URLconf in your project urls.py like this:
-    ```
-    url(r'^wechat/', include('wechat.urls')),
-    ```
+.. code-block::
 
-3. Run `python manage.py migrate` to create the wechat models.
+    url(r'^wx/', include('wechat.urls')),
 
-4. Add url `http://yourdomain/wechat/` and `yourtoken` to your wechat dashboard.
+添加数据表:
+
+.. code-block::
+
+   python manage.py migrate
+
+使用微信开发者模块:
+
+   接口地址为：http://yourdomain/wx/
 
 
-## Changelog
-
-> v0.3 -make jsapi editable, fixed get_code_url()
-
-> v0.2 -create base view
-
-> v0.1 -initial release
+版本更改:
+---------
+- v0.3 使js配置信息可编辑，添加Qrcode类
+- v0.2 添加WxMemberView
+- v0.1 第一版
