@@ -2,9 +2,8 @@
 ========================
 
 .. image:: https://readthedocs.org/projects/django-wechat/badge/?version=latest
-
-:target: http://django-wechat.readthedocs.org/zh_CN/latest/?badge=latest
-:alt: Documentation Status
+    :target: http://django-wechat.readthedocs.org/zh_CN/latest/?badge=latest
+    :alt: Documentation Status
 
 一个基于django的微信基础功能模块
 
