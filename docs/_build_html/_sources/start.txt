@@ -1,7 +1,7 @@
 基于django的微信基础模块
 ========================
 
-一个基于django的微信基础功能模块.文档地址http://django-wechat.readthedocs.org
+一个基于django的微信基础功能模块
 
 快速开始:
 ---------
