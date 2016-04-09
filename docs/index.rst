@@ -8,7 +8,7 @@ django_wechat
 
 django_wechat 是一个基于django的微信基础模块,提供了微信的最基础接口功能.
 
-功能:
+功能
 -----
 
 - 关注回复(关键字为"关注")
@@ -17,7 +17,7 @@ django_wechat 是一个基于django的微信基础模块,提供了微信的最�
 - 单图文回复
 - 自定义菜单
 
-使用方法:
+使用方法
 ---------
 
 安装依赖模块::
@@ -62,7 +62,7 @@ django_wechat 是一个基于django的微信基础模块,提供了微信的最�
    token为: yourtoken
 
 
-api模块:
+api模块
 --------
 
 - Base
@@ -75,12 +75,12 @@ api模块:
 - Qrcode
 
 
-开发者:
+开发者
 -------
 
 - chanmo: http://www.findchen.com/
 
-版本更改:
+版本更改
 ---------
 - v0.3 使js配置信息可编辑，添加Qrcode类
 - v0.2 添加WxMemberView

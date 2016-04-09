@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; django_wechat 3.0 documentation</title>
+  <title>基于django的微信基础模块 &mdash; django_wechat 3.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -80,7 +80,14 @@
             
             
                 <!-- Local TOC -->
-                <div class="local-toc"></div>
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">基于django的微信基础模块</a><ul>
+<li><a class="reference internal" href="#id1">快速开始:</a></li>
+<li><a class="reference internal" href="#id2">版本更改:</a></li>
+</ul>
+</li>
+</ul>
+</div>
             
           
         </div>
@@ -101,7 +108,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -109,8 +116,12 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>基于django的微信基础模块</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/start.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
@@ -119,19 +130,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="django">
+<h1>基于django的微信基础模块<a class="headerlink" href="#django" title="Permalink to this headline">¶</a></h1>
+<p>一个基于django的微信基础功能模块</p>
+<div class="section" id="id1">
+<h2>快速开始:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>安装依赖模块:</p>
+<p>安装wechat:</p>
+<p>把wechat模块添加到你的settings.py里面:</p>
+<p>在settings.py里面添加微信设置信息:</p>
+<p>在urls.py里面添加微信接口:</p>
+<p>添加数据表:</p>
+<p>使用微信开发者模块:</p>
+<blockquote>
+<div>接口地址为：<a class="reference external" href="http://yourdomain/wx/">http://yourdomain/wx/</a>
+token为: yourtoken</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>版本更改:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>v0.3 使js配置信息可编辑，添加Qrcode类</li>
+<li>v0.2 添加WxMemberView</li>
+<li>v0.1 第一版</li>
+</ul>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
           </div>
@@ -173,7 +197,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/searchtools.js"></script>
 
   
 
@@ -189,14 +212,7 @@
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>
