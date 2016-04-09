@@ -63,6 +63,7 @@
    token为: yourtoken
 
 
+
 版本更改:
 ---------
 - v0.3 使js配置信息可编辑，添加Qrcode类
