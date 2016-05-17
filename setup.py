@@ -8,15 +8,16 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name = 'django-wechat',
-    version = '0.3',
+    name = 'django-wechat-api',
+    version = '0.3.1',
     packages = ['wechat'],
     include_package_data = True,
+    install_requires = ['xmltodict>=0.9.2'],
     license = 'BSD License',
     description = 'A simple wechat api model.',
     long_description = README,
-    url = 'http://www.findchen.com/',
-    author = 'Chen',
+    url = 'https://github.com/ChanMo/django_wechat/',
+    author = 'ChanMo',
     author_email = 'chen.orange@aliyun.com',
     classifiers = [
         'Environment :: Web Environment',

@@ -1,5 +1,5 @@
 Metadata-Version: 1.1
-Name: django-wechat
+Name: django-wechat-api
 Version: 0.3.1
 Summary: A simple wechat api model.
 Home-page: https://github.com/ChanMo/django_wechat/

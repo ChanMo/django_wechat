@@ -10,17 +10,11 @@
 快速开始:
 ---------
 
-安装依赖模块:
-
-.. code-block::
-
-    pip install xmltodict
-
 安装wechat:
 
 .. code-block::
 
-    pip install git+https://github.com/ChanMo/django_wechat.git
+    pip install django-wechat
 
 把wechat模块添加到你的settings.py里面:
 

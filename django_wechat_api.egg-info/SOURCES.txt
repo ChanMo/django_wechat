@@ -2,11 +2,11 @@ LICENSE
 MANIFEST.in
 README.rst
 setup.py
-django_wechat.egg-info/PKG-INFO
-django_wechat.egg-info/SOURCES.txt
-django_wechat.egg-info/dependency_links.txt
-django_wechat.egg-info/requires.txt
-django_wechat.egg-info/top_level.txt
+django_wechat_api.egg-info/PKG-INFO
+django_wechat_api.egg-info/SOURCES.txt
+django_wechat_api.egg-info/dependency_links.txt
+django_wechat_api.egg-info/requires.txt
+django_wechat_api.egg-info/top_level.txt
 docs/Makefile
 docs/conf.py
 docs/index.rst
