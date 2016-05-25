@@ -1,7 +1,6 @@
-#!/usr/bin/python
-# vim: set fileencoding=utf-8 :
+from django.utils.translation import ugettext_lazy as _
 from django.apps import AppConfig
 
 class WechatConfig(AppConfig):
-    name = u'wechat'
-    verbose_name = u'微信'
+    name = 'wechat'
+    verbose_name = _('wechat')

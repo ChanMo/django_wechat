@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# vim: set fileencoding=utf-8 :
 import os
 import hashlib
 import urllib
@@ -11,6 +9,7 @@ import random
 import string
 import collections
 
+from django.utils.translation import ugettext_lazy as _
 from django.utils.timezone import localtime
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse
@@ -23,7 +22,7 @@ from .models import Menu, Text, News
 
 
 class Base(object):
-    '微信接口基类'
+    'base class'
     base_url = 'https://api.weixin.qq.com/cgi-bin/'
     appid = ''
     appsecret = ''
@@ -70,7 +69,7 @@ class Base(object):
     # get sign
     def get_sign(self, data):
         data = collections.OrderedDict(sorted(data.items()))
-        s = u''
+        s = ''
         for item in data:
             s = s + item + '=' + data[item] + '&'
         s = s[0:-1]
@@ -130,34 +129,36 @@ class Push(Base):
 
 
 class Response(Base):
-    '微信回复'
+    'response class'
+    domain = ''
     receive_data = ''
 
     def __init__(self, request):
+        self.domain = settings.WECHAT_DOMAIN
         data = request.body
         data = dict(xmltodict.parse(data)['xml'])
         self.receive_data = data
 
     def set_keyword(self):
         """
-        把微信发送过来的数据转化为统一关键字
-        :param data: 微信数据(dict)
-        :return: 关键字(str)
+        set wechat message transfer to a keyword
+        :param data: wechat data(dict)
+        :return: keyword(str)
         """
         data = self.receive_data
         try:
             keyword = data['Content']
         except KeyError:
             try:
-                if data['MsgType'] == u'event':
-                    if data['Event'] == u'subscribe':
-                        keyword = u'关注'
-                    elif data['Event'] == u'CLICK':
+                if data['MsgType'] == 'event':
+                    if data['Event'] == 'subscribe':
+                        keyword = 'subscribe'
+                    elif data['Event'] == 'CLICK':
                         keyword = data['EventKey']
                     else:
                         keyword = data['Event']
             except KeyError:
-                keyword = u'默认'
+                keyword = 'default'
 
         self.keyword = keyword
 
@@ -171,7 +172,7 @@ class Response(Base):
                 text = Text.objects.get(keyword=self.keyword)
                 msg = self.response_text(text)
             except Text.DoesNotExist:
-                text = Text.objects.get(keyword=u'默认')
+                text = Text.objects.get(keyword='default')
                 msg = self.response_text(text)
         return msg
 
@@ -201,7 +202,7 @@ class Response(Base):
                     'item': {
                         'Title': obj.title,
                         'Description': obj.description,
-                        'PicUrl': 'http://123.56.144.246' + obj.pic.url,
+                        'PicUrl': 'http://' + self.domain + obj.pic.url,
                         'Url': obj.url,
                     }
                 }
@@ -212,8 +213,7 @@ class Response(Base):
 
 
 class Member(Base):
-    '会员相关'
-
+    'member'
     def get_code_url(self, redirect_uri, state):
         redirect_uri = urllib.quote(redirect_uri, safe='')
         # url = 'https://open.weixin.qq.com/connect/oauth2/authorize'
@@ -255,7 +255,7 @@ class Member(Base):
 
 
 class Pay(Base):
-    '支付相关'
+    'pay'
     mch_id = ''
     key = ''
 
@@ -267,7 +267,7 @@ class Pay(Base):
 
     def set_prepay_id(self, data):
         data['xml'].update({
-            'trade_type': u'JSAPI',
+            'trade_type': 'JSAPI',
             'appid': self.appid,
             'mch_id': self.mch_id,
             'nonce_str': unicode(self.get_random()),
@@ -287,8 +287,8 @@ class Pay(Base):
             'appId': self.appid,
             'timeStamp': unicode(int(time.time())),
             'nonceStr': self.get_random(),
-            'package': u'prepay_id=%s' % self.prepay_id,
-            'signType': u'MD5',
+            'package': 'prepay_id=%s' % self.prepay_id,
+            'signType': 'MD5',
         }
         sign = {'paySign': self.get_sign(data),}
         data.update(sign)
@@ -342,7 +342,7 @@ class Js(Base):
             'timestamp': timestamp,
         }
         data = collections.OrderedDict(sorted(data.items()))
-        s = u''
+        s = ''
         for item in data:
             s = s + item + '=' + data[item] + '&'
         s = s[0:-1]

@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-18 16:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: admin.py:29
+msgid "wechat menu sync success"
+msgstr "菜单更新成功"
+
+#: admin.py:32
+msgid "wechat menu sync error"
+msgstr "菜单更新失败"
+
+#: apps.py:6
+msgid "wechat"
+msgstr "微信"
+
+#: models.py:7 models.py:12
+msgid "root menu"
+msgstr "主菜单"
+
+#: models.py:8
+msgid "view menu"
+msgstr "网页链接"
+
+#: models.py:9
+msgid "click menu"
+msgstr "消息回复"
+
+#: models.py:13
+msgid "name"
+msgstr "名称"
+
+#: models.py:14
+msgid "type"
+msgstr "类型"
+
+#: models.py:16
+msgid "value"
+msgstr "值"
+
+#: models.py:18
+msgid "sort"
+msgstr "排序"
+
+#: models.py:25
+msgid "menu"
+msgstr "菜单"
+
+#: models.py:26
+msgid "menus"
+msgstr "菜单"
+
+#: models.py:31 models.py:46
+msgid "keyword"
+msgstr "关键字"
+
+#: models.py:32
+msgid "content"
+msgstr "内容"
+
+#: models.py:33 models.py:51
+msgid "created time"
+msgstr "创建时间"
+
+#: models.py:34 models.py:52
+msgid "updated time"
+msgstr "更新时间"
+
+#: models.py:40 models.py:41
+msgid "text response"
+msgstr "文本回复"
+
+#: models.py:47
+msgid "title"
+msgstr "标题"
+
+#: models.py:48
+msgid "description"
+msgstr "描述"
+
+#: models.py:49
+msgid "image"
+msgstr "图片"
+
+#: models.py:50
+msgid "link"
+msgstr "链接"
+
+#: models.py:58 models.py:59
+msgid "news response"
+msgstr "图文回复"
+
+#: templates/admin/wechat/menu/change_list.html:6
+msgid "upload menu"
+msgstr "上传菜单"

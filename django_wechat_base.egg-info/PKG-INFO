@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
-Name: django-wechat-api
-Version: 0.3.2
+Name: django-wechat-base
+Version: 0.4.5
 Summary: A simple wechat api model.
 Home-page: https://github.com/ChanMo/django_wechat/
 Author: ChanMo
@@ -22,7 +22,7 @@ Description: 基于django的微信基础模块
         
         .. code-block::
         
-            pip install django-wechat-api
+            pip install django-wechat-base
         
         把wechat模块添加到你的settings.py里面:
         
@@ -68,6 +68,7 @@ Description: 基于django的微信基础模块
         
         版本更改:
         ---------
+        - v0.4 添加多语言支持
         - v0.3 使js配置信息可编辑，添加Qrcode类
         - v0.2 添加WxMemberView
         - v0.1 第一版

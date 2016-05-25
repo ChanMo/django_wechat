@@ -1,61 +1,63 @@
-#!/usr/bin/python
-# vim: set fileencoding=utf-8 :
 import json
+from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 class Menu(models.Model):
     TYPE_CHOICES = (
-        ('null', '根目录'),
-        ('view', '跳转URL'),
-        ('click', '点击推事件'),
+        ('null', _('root menu')),
+        ('view', _('view menu')),
+        ('click', _('click menu')),
     )
-    top = models.ForeignKey('self', related_name='Top', verbose_name='主菜单', blank=True, null=True, default=None)
-    name = models.CharField(max_length=100, verbose_name='名称')
-    type = models.CharField(max_length=20, choices=TYPE_CHOICES, default='view', verbose_name='类型')
-    value = models.CharField(max_length=200, verbose_name='值', blank=True, null=True, default='')
-    sort = models.PositiveIntegerField(default=0, blank=True, null=True, verbose_name='排序')
+    top = models.ForeignKey('self', related_name='children', blank=True,\
+            null=True, default=None, verbose_name=_('root menu'))
+    name = models.CharField(_('name'), max_length=100)
+    type = models.CharField(_('type'), max_length=20, choices=TYPE_CHOICES,\
+            default='view')
+    value = models.CharField(_('value'), max_length=200, blank=True,\
+            null=True, default='')
+    sort = models.PositiveIntegerField(_('sort'), blank=True, null=True,\
+            default=0)
 
     def __unicode__(self):
         return self.name
 
     class Meta(object):
-        verbose_name = '自定义菜单'
-        verbose_name_plural = '自定义菜单'
+        verbose_name = _('menu')
+        verbose_name_plural = _('menus')
         ordering = ['sort']
 
 
 class Text(models.Model):
-    keyword = models.CharField(max_length=20, verbose_name='关键字')
-    content = models.TextField(verbose_name='内容')
-    created = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
-    updated = models.DateTimeField(auto_now=True, verbose_name='修改时间')
+    keyword = models.CharField(_('keyword'), max_length=20)
+    content = models.TextField(_('content'))
+    created = models.DateTimeField(_('created time'), auto_now_add=True)
+    updated = models.DateTimeField(_('updated time'), auto_now=True)
 
     def __unicode__(self):
         return self.keyword
 
     class Meta(object):
-        verbose_name = '文本回复'
-        verbose_name_plural = '文本回复'
+        verbose_name = _('text response')
+        verbose_name_plural = _('text response')
         ordering = ['-updated']
 
 
 class News(models.Model):
-    keyword = models.CharField(max_length=20, verbose_name='关键字')
-    title = models.CharField(max_length=200, verbose_name='标题')
-    description = models.TextField(verbose_name='描述')
-    pic = models.ImageField(upload_to='wechat/', verbose_name='图片')
-    url = models.URLField(max_length=200, verbose_name='链接')
-    created = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
-    updated = models.DateTimeField(auto_now=True, verbose_name='修改时间')
+    keyword = models.CharField(_('keyword'), max_length=20)
+    title = models.CharField(_('title'), max_length=200)
+    description = models.TextField(_('description'))
+    pic = models.ImageField(_('image'), upload_to='upload/wechat/%Y/%m/%d')
+    url = models.URLField(_('link'), max_length=200)
+    created = models.DateTimeField(_('created time'), auto_now_add=True)
+    updated = models.DateTimeField(_('updated time'), auto_now=True)
 
     def __unicode__(self):
         return self.keyword
 
     class Meta(object):
-        verbose_name = '图文回复'
-        verbose_name_plural = '图文回复'
+        verbose_name = _('news response')
+        verbose_name_plural = _('news response')
         ordering = ['-updated']
-
 
 
 def menu_list():

@@ -1,8 +1,9 @@
 {% extends "admin/change_list.html" %}
+{% load i18n %}
 {% block object-tools-items %}
 {{ block.super }}
 <li>
-  <a href="sync/" class="grp-state-focus" class="addlink">更新到服务器</a>
+<a href="sync/" class="grp-state-focus" class="addlink">{% trans "upload menu" %}</a>
 </li>
 
 {% endblock %}

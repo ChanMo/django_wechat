@@ -14,7 +14,7 @@
 
 .. code-block::
 
-    pip install django-wechat
+    pip install django-wechat-base
 
 把wechat模块添加到你的settings.py里面:
 
@@ -60,6 +60,7 @@
 
 版本更改:
 ---------
+- v0.4 添加多语言支持
 - v0.3 使js配置信息可编辑，添加Qrcode类
 - v0.2 添加WxMemberView
 - v0.1 第一版
