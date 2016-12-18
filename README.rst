@@ -1,6 +1,8 @@
 基于django的微信基础模块
 ========================
 
+此版本已停止更新，把功能进行拆分，分为 `django-wechat-base <http://github.com/ChanMo/django-wechat-base.git>`_，`django-wechat-message <http://github.com/ChanMo/django-wechat-message.git>`_，`django-wechat-menu <http://github.com/ChanMo/django-wechat-menu.git>`_，同时 `django-wechat-member <http://github.com/ChanMo/django-wechat-member.git>`_， `django-wechat-pay <http://github.com/ChanMo/django-wechat-pay.git>`_， `django-wechat-qrcode <http://github.com/ChanMo/django-wechat-qrcode.git>`_ 等模块也进行相应更新。
+
 .. image:: https://readthedocs.org/projects/django-wechat/badge/?version=latest
     :target: http://django-wechat.readthedocs.org/zh_CN/latest/?badge=latest
     :alt: Documentation Status
